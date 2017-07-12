@@ -6,13 +6,15 @@ import React from 'react';
 
 export class BookThumbnail extends React.Component {
 
+    constructor() {
+        super();
+    }
 
     render() {
         return (
             <div>
-                { // put stuf here
-            }
-                    </div>
+                Hello!
+            </div>
         );
     }
 

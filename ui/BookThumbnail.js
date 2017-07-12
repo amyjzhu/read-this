@@ -11,12 +11,13 @@ var react_1 = require('react');
 var BookThumbnail = (function (_super) {
     __extends(BookThumbnail, _super);
     function BookThumbnail() {
-        _super.apply(this, arguments);
+        _super.call(this);
     }
     BookThumbnail.prototype.render = function () {
-        return ({}
-            < /div>);
+        return (<div>
+                HEllo!
+            </div>);
     };
     return BookThumbnail;
-}(react_1.default.Component));
+}(react_1["default"].Component));
 exports.BookThumbnail = BookThumbnail;

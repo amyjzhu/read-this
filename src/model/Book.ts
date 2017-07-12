@@ -14,11 +14,11 @@ interface IBook  {
 
 export class Book implements IBook {
 
-    private title;
-    private author;
-    private year;
-    private version;
-    private genre;
+    private title : string;
+    private author : string;
+    private year : number;
+    private version : number;
+    private genre : Genres;
 
 
     constructor(title : string, author : string, year : number, version : number, genre : Genres) {

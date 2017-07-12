@@ -1,29 +1,42 @@
-var config = {
-    entry: './main.js',
+const path = require('path');
+const webpack = require('webpack');
 
+
+module.exports = {
+    // put sourcemaps inline
+    devtool: 'eval',
+
+    // entry point of our application, within the `src` directory (which we add to resolve.modules below):
+    entry: [
+        'main.tsx'
+    ],
+
+    // configure the output directory and publicPath for the devServer
     output: {
-        path:'./',
-        filename: 'index.js'
+        filename: 'index.js',
+        path: path.resolve('./')
     },
 
+    // configure the dev server to run
     devServer: {
+        port: 8080,
+        historyApiFallback: true,
         inline: true,
-        port: 8080
+    },
+
+    // tell Webpack to load TypeScript files
+    resolve: {
+        // Look for modules in .ts(x) files first, then .js
+        extensions: ['.ts', '.tsx', '.js','.es6.js'],
+
+        // add 'src' to the modules, so that when you import files you can do so with 'src' as the relative route
+        modules: ['src', 'node_modules'],
     },
 
     module: {
         loaders: [
-            {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: 'babel',
-
-                query: {
-                    presets: ['es2015', 'react']
-                }
-            }
+            // .ts(x) files should first pass through the Typescript loader, and then through babel
+            { test: /\.tsx?$/, loaders: ['babel-loader', 'ts-loader'], include: path.resolve('src') }
         ]
-    }
+    },
 };
-
-module.exports = config;

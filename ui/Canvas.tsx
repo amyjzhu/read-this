@@ -12,7 +12,11 @@ class Canvas extends React.Component {
     render() {
         return (
             <div>
-            <BookThumbnail/ >
+                    HAVE YOU READ THIS ?
+            <div>
+                <BookThumbnail />
+            </div>
+
             </div>
         );
     }
