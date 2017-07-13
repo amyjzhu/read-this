@@ -9,12 +9,17 @@ class Canvas extends React.Component {
         super();
     }
 
+
+    createThumbnail(i : string) {
+        return ( <BookThumbnail value={i} /> );
+    }
+
     render() {
         return (
             <div>
                     HAVE YOU READ THIS ?
             <div>
-                <BookThumbnail />
+                { this.createThumbnail("hello") }
             </div>
 
             </div>

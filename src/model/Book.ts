@@ -4,15 +4,7 @@ import {Genres, Status} from "../util/def";
  */
 
 
-interface IBook  {
-    title : string;
-    author : string;
-    year: number;
-    version: number;
-    genre: Genres;
-}
-
-export class Book implements IBook {
+export class Book {
 
     private title : string;
     private author : string;
